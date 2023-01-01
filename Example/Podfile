@@ -1,0 +1,6 @@
+use_frameworks!
+target 'WechatSDK-withpay-in-xcframework_Tests' do
+  pod 'WechatSDK-withpay-in-xcframework', :path => '../'
+  
+  
+end
