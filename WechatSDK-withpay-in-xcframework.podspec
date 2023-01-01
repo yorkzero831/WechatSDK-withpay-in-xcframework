@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'WechatSDK-withpay-in-xcframework'
-  s.version          = '0.1.0'
-  s.summary          = 'A short description of WechatSDK-withpay-in-xcframework.'
+  s.version          = '2.0.0'
+  s.summary          = 'A xcframework based WechaSDK Support M1 simulator'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,22 +18,52 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+  This pod is built for wechatsdk-withpay
+  Please see https://github.com/yorkzero831/WechatSDK-in-xcframework
                        DESC
 
-  s.homepage         = 'https://github.com/16892216/WechatSDK-withpay-in-xcframework'
+  s.homepage         = 'https://github.com/yorkzero831/WechatSDK-in-xcframework'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
-  s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { '16892216' => 'yorkzero8312@gmail.com' }
-  s.source           = { :git => 'https://github.com/16892216/WechatSDK-withpay-in-xcframework.git', :tag => s.version.to_s }
+  s.license          = { :type => 'MIT', :text => <<-LICENSE
+                        Copyright (c) 2023 yorkzero8312 <yorkzero8312@gmail.com>
+
+                        Permission is hereby granted, free of charge, to any person obtaining a copy
+                        of this software and associated documentation files (the "Software"), to deal
+                        in the Software without restriction, including without limitation the rights
+                        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+                        copies of the Software, and to permit persons to whom the Software is
+                        furnished to do so, subject to the following conditions:
+                        
+                        The above copyright notice and this permission notice shall be included in
+                        all copies or substantial portions of the Software.
+                        
+                        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+                        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+                        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+                        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+                        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+                        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+                        THE SOFTWARE.
+                        LICENSE
+                       }
+  s.author           = { 'yorkzero8312' => 'yorkzero8312@gmail.com' }
+  s.source           = { :http => 'https://github.com/yorkzero831/WechatSDK-in-xcframework/releases/download/v2.0.0/wechatsdk-withpay.zip' }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '10.0'
+  platform = :ios
+  
 
-  s.source_files = 'WechatSDK-withpay-in-xcframework/Classes/**/*'
+  s.ios.deployment_target = '14.0'
+
+  # s.source_files = 'AlipaySDK-in-xcframework/Classes/**/*'
+
+  s.vendored_frameworks = 'output/wechatsdk-withpay/WechatSDK.xcframework'
+
+  s.frameworks = 'Security', 'SystemConfiguration', 'CoreTelephony'
+  s.libraries = 'c++', 'z', 'sqlite3.0'
   
   # s.resource_bundles = {
-  #   'WechatSDK-withpay-in-xcframework' => ['WechatSDK-withpay-in-xcframework/Assets/*.png']
+  #   'AlipaySDK-in-xcframework' => ['AlipaySDK-in-xcframework/Assets/*.png']
   # }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
